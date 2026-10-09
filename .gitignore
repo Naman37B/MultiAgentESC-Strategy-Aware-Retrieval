@@ -1,0 +1,30 @@
+# Python temporary files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local credentials
+OAI_CONFIG_LIST
+.env
+.env.*
+!.env.example
+
+# Embedding caches
+embeddings_train.txt
+embeddings_train.txt.manifest.json
+
+# Generated experiment results
+results/*.json
+results/*.log
+
+# Model weights and local caches
+*.pt
+*.pth
+*.safetensors
+42/
