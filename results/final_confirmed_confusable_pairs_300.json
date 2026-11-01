@@ -1,0 +1,125 @@
+{
+  "source_run": "results/final_val_baseline_300.json",
+  "none_rate": {
+    "none_count": 0,
+    "total": 300,
+    "none_rate": 0.0
+  },
+  "composite_rate": {
+    "composite_count": 0,
+    "total": 300,
+    "composite_rate": 0.0
+  },
+  "n_eligible_deliberation_turns": 300,
+  "confirmed_confusable_pairs": [
+    [
+      "Affirmation and Reassurance",
+      "Providing Suggestions"
+    ],
+    [
+      "Affirmation and Reassurance",
+      "Others"
+    ],
+    [
+      "Affirmation and Reassurance",
+      "Reflection of feelings"
+    ],
+    [
+      "Affirmation and Reassurance",
+      "Question"
+    ],
+    [
+      "Others",
+      "Providing Suggestions"
+    ]
+  ],
+  "pair_counts": {
+    "Affirmation and Reassurance vs Providing Suggestions": 29,
+    "Affirmation and Reassurance vs Others": 25,
+    "Affirmation and Reassurance vs Reflection of feelings": 24,
+    "Affirmation and Reassurance vs Question": 17,
+    "Others vs Providing Suggestions": 17
+  },
+  "full_confusion_matrix": {
+    "Question": {
+      "Question": 10,
+      "Restatement or Paraphrasing": 3,
+      "Reflection of feelings": 11,
+      "Self-disclosure": 0,
+      "Affirmation and Reassurance": 14,
+      "Providing Suggestions": 11,
+      "Information": 1,
+      "Others": 1
+    },
+    "Restatement or Paraphrasing": {
+      "Question": 2,
+      "Restatement or Paraphrasing": 0,
+      "Reflection of feelings": 6,
+      "Self-disclosure": 0,
+      "Affirmation and Reassurance": 3,
+      "Providing Suggestions": 4,
+      "Information": 3,
+      "Others": 0
+    },
+    "Reflection of feelings": {
+      "Question": 1,
+      "Restatement or Paraphrasing": 0,
+      "Reflection of feelings": 5,
+      "Self-disclosure": 0,
+      "Affirmation and Reassurance": 13,
+      "Providing Suggestions": 6,
+      "Information": 0,
+      "Others": 0
+    },
+    "Self-disclosure": {
+      "Question": 2,
+      "Restatement or Paraphrasing": 1,
+      "Reflection of feelings": 4,
+      "Self-disclosure": 1,
+      "Affirmation and Reassurance": 9,
+      "Providing Suggestions": 10,
+      "Information": 1,
+      "Others": 3
+    },
+    "Affirmation and Reassurance": {
+      "Question": 3,
+      "Restatement or Paraphrasing": 0,
+      "Reflection of feelings": 11,
+      "Self-disclosure": 0,
+      "Affirmation and Reassurance": 21,
+      "Providing Suggestions": 14,
+      "Information": 1,
+      "Others": 4
+    },
+    "Providing Suggestions": {
+      "Question": 2,
+      "Restatement or Paraphrasing": 2,
+      "Reflection of feelings": 5,
+      "Self-disclosure": 0,
+      "Affirmation and Reassurance": 15,
+      "Providing Suggestions": 14,
+      "Information": 1,
+      "Others": 4
+    },
+    "Information": {
+      "Question": 0,
+      "Restatement or Paraphrasing": 0,
+      "Reflection of feelings": 3,
+      "Self-disclosure": 0,
+      "Affirmation and Reassurance": 9,
+      "Providing Suggestions": 15,
+      "Information": 2,
+      "Others": 0
+    },
+    "Others": {
+      "Question": 2,
+      "Restatement or Paraphrasing": 0,
+      "Reflection of feelings": 5,
+      "Self-disclosure": 0,
+      "Affirmation and Reassurance": 21,
+      "Providing Suggestions": 13,
+      "Information": 1,
+      "Others": 7
+    }
+  }
+}

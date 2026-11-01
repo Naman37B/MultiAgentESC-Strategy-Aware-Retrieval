@@ -1,0 +1,47 @@
+{
+  "split": "val",
+  "n_validation_posts": 200,
+  "selected_lambda_diversity": 0.3,
+  "sweep": [
+    {
+      "lambda_diversity": 0.0,
+      "mean_distinct_strategies_top10": 5.15,
+      "normalized_strategy_entropy": 0.962,
+      "confusable_pair_cosurfacing_rate": 0.557,
+      "rrf_relevance_retention": 0.946,
+      "validation_composite_score": 0.7278
+    },
+    {
+      "lambda_diversity": 0.15,
+      "mean_distinct_strategies_top10": 6.515,
+      "normalized_strategy_entropy": 0.9775,
+      "confusable_pair_cosurfacing_rate": 0.884,
+      "rrf_relevance_retention": 0.7985,
+      "validation_composite_score": 0.8262
+    },
+    {
+      "lambda_diversity": 0.3,
+      "mean_distinct_strategies_top10": 7.075,
+      "normalized_strategy_entropy": 0.9854,
+      "confusable_pair_cosurfacing_rate": 0.95,
+      "rrf_relevance_retention": 0.7435,
+      "validation_composite_score": 0.8417
+    },
+    {
+      "lambda_diversity": 0.45,
+      "mean_distinct_strategies_top10": 7.435,
+      "normalized_strategy_entropy": 0.9913,
+      "confusable_pair_cosurfacing_rate": 0.971,
+      "rrf_relevance_retention": 0.716,
+      "validation_composite_score": 0.8141
+    },
+    {
+      "lambda_diversity": 0.6,
+      "mean_distinct_strategies_top10": 7.65,
+      "normalized_strategy_entropy": 0.9943,
+      "confusable_pair_cosurfacing_rate": 0.975,
+      "rrf_relevance_retention": 0.698,
+      "validation_composite_score": 0.7925
+    }
+  ]
+}

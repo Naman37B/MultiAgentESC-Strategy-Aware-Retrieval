@@ -1,0 +1,1350 @@
+{
+  "table": [
+    {
+      "arm": "A: Baseline",
+      "n_turns": 300,
+      "n_eligible_turns": 300,
+      "none_count": 0,
+      "none_rate": 0.0,
+      "composite_count": 0,
+      "composite_rate": 0.0,
+      "macro_f1": 0.1519,
+      "js_divergence_vs_test_gold": 0.2159,
+      "js_divergence_vs_esconv_reference": 0.1866,
+      "retrieval_latency_mean_ms": 1349.267,
+      "retrieval_latency_median_ms": 1297.072,
+      "retrieval_latency_p95_ms": 1753.938,
+      "retrieval_overhead_vs_baseline_ms": 0.0,
+      "retrieval_overhead_ratio_vs_baseline": 1.0,
+      "turn_latency_mean_s": 8.442,
+      "turn_latency_median_s": 8.325,
+      "turn_latency_p95_s": 9.992,
+      "pair_acc (Affirmation and Reassurance vs Providing Suggestions)": 0.4945,
+      "pair_n (Affirmation and Reassurance vs Providing Suggestions)": 91,
+      "pair_acc (Affirmation and Reassurance vs Others)": 0.2316,
+      "pair_n (Affirmation and Reassurance vs Others)": 95,
+      "pair_acc (Affirmation and Reassurance vs Reflection of feelings)": 0.3167,
+      "pair_n (Affirmation and Reassurance vs Reflection of feelings)": 60,
+      "pair_acc (Affirmation and Reassurance vs Question)": 0.2121,
+      "pair_n (Affirmation and Reassurance vs Question)": 99,
+      "pair_acc (Others vs Providing Suggestions)": 0.3679,
+      "pair_n (Others vs Providing Suggestions)": 106,
+      "confusable_pairs_mean_accuracy": 0.3246,
+      "n_response_deliberation_turns": 300,
+      "delib_response_distinct_1": 0.2825,
+      "delib_response_distinct_2": 0.677,
+      "delib_response_bleu_1": 0.0547,
+      "delib_response_bleu_2": 0.0112,
+      "delib_response_bleu_3": 0.004,
+      "delib_response_f1": 0.0818,
+      "delib_response_rouge_l": 0.0727,
+      "n_response_all_turns": 300,
+      "response_distinct_1": 0.2825,
+      "response_distinct_2": 0.677,
+      "response_bleu_1": 0.0547,
+      "response_bleu_2": 0.0112,
+      "response_bleu_3": 0.004,
+      "response_f1": 0.0818,
+      "response_rouge_l": 0.0727
+    },
+    {
+      "arm": "B: +RRF",
+      "n_turns": 300,
+      "n_eligible_turns": 300,
+      "none_count": 0,
+      "none_rate": 0.0,
+      "composite_count": 0,
+      "composite_rate": 0.0,
+      "macro_f1": 0.1393,
+      "js_divergence_vs_test_gold": 0.0429,
+      "js_divergence_vs_esconv_reference": 0.0344,
+      "retrieval_latency_mean_ms": 1147.163,
+      "retrieval_latency_median_ms": 1070.467,
+      "retrieval_latency_p95_ms": 1460.057,
+      "retrieval_overhead_vs_baseline_ms": -202.103,
+      "retrieval_overhead_ratio_vs_baseline": 0.85,
+      "turn_latency_mean_s": 5.69,
+      "turn_latency_median_s": 5.662,
+      "turn_latency_p95_s": 6.588,
+      "pair_acc (Affirmation and Reassurance vs Providing Suggestions)": 0.1978,
+      "pair_n (Affirmation and Reassurance vs Providing Suggestions)": 91,
+      "pair_acc (Affirmation and Reassurance vs Others)": 0.1474,
+      "pair_n (Affirmation and Reassurance vs Others)": 95,
+      "pair_acc (Affirmation and Reassurance vs Reflection of feelings)": 0.1,
+      "pair_n (Affirmation and Reassurance vs Reflection of feelings)": 60,
+      "pair_acc (Affirmation and Reassurance vs Question)": 0.3636,
+      "pair_n (Affirmation and Reassurance vs Question)": 99,
+      "pair_acc (Others vs Providing Suggestions)": 0.2075,
+      "pair_n (Others vs Providing Suggestions)": 106,
+      "confusable_pairs_mean_accuracy": 0.2033,
+      "n_response_deliberation_turns": 300,
+      "delib_response_distinct_1": 0.2876,
+      "delib_response_distinct_2": 0.6914,
+      "delib_response_bleu_1": 0.0678,
+      "delib_response_bleu_2": 0.0185,
+      "delib_response_bleu_3": 0.0066,
+      "delib_response_f1": 0.094,
+      "delib_response_rouge_l": 0.0785,
+      "n_response_all_turns": 300,
+      "response_distinct_1": 0.2876,
+      "response_distinct_2": 0.6914,
+      "response_bleu_1": 0.0678,
+      "response_bleu_2": 0.0185,
+      "response_bleu_3": 0.0066,
+      "response_f1": 0.094,
+      "response_rouge_l": 0.0785
+    },
+    {
+      "arm": "C: +Rerank",
+      "n_turns": 300,
+      "n_eligible_turns": 300,
+      "none_count": 0,
+      "none_rate": 0.0,
+      "composite_count": 0,
+      "composite_rate": 0.0,
+      "macro_f1": 0.143,
+      "js_divergence_vs_test_gold": 0.0405,
+      "js_divergence_vs_esconv_reference": 0.0312,
+      "retrieval_latency_mean_ms": 1280.94,
+      "retrieval_latency_median_ms": 1387.494,
+      "retrieval_latency_p95_ms": 1730.158,
+      "retrieval_overhead_vs_baseline_ms": -68.327,
+      "retrieval_overhead_ratio_vs_baseline": 0.949,
+      "turn_latency_mean_s": 4.948,
+      "turn_latency_median_s": 4.814,
+      "turn_latency_p95_s": 6.593,
+      "pair_acc (Affirmation and Reassurance vs Providing Suggestions)": 0.1978,
+      "pair_n (Affirmation and Reassurance vs Providing Suggestions)": 91,
+      "pair_acc (Affirmation and Reassurance vs Others)": 0.1895,
+      "pair_n (Affirmation and Reassurance vs Others)": 95,
+      "pair_acc (Affirmation and Reassurance vs Reflection of feelings)": 0.1,
+      "pair_n (Affirmation and Reassurance vs Reflection of feelings)": 60,
+      "pair_acc (Affirmation and Reassurance vs Question)": 0.3535,
+      "pair_n (Affirmation and Reassurance vs Question)": 99,
+      "pair_acc (Others vs Providing Suggestions)": 0.2453,
+      "pair_n (Others vs Providing Suggestions)": 106,
+      "confusable_pairs_mean_accuracy": 0.2172,
+      "n_response_deliberation_turns": 300,
+      "delib_response_distinct_1": 0.2851,
+      "delib_response_distinct_2": 0.6846,
+      "delib_response_bleu_1": 0.0636,
+      "delib_response_bleu_2": 0.0163,
+      "delib_response_bleu_3": 0.0065,
+      "delib_response_f1": 0.0905,
+      "delib_response_rouge_l": 0.0766,
+      "n_response_all_turns": 300,
+      "response_distinct_1": 0.2851,
+      "response_distinct_2": 0.6846,
+      "response_bleu_1": 0.0636,
+      "response_bleu_2": 0.0163,
+      "response_bleu_3": 0.0065,
+      "response_f1": 0.0905,
+      "response_rouge_l": 0.0766
+    },
+    {
+      "arm": "D: +Evidence",
+      "n_turns": 300,
+      "n_eligible_turns": 300,
+      "none_count": 0,
+      "none_rate": 0.0,
+      "composite_count": 0,
+      "composite_rate": 0.0,
+      "macro_f1": 0.1655,
+      "js_divergence_vs_test_gold": 0.0286,
+      "js_divergence_vs_esconv_reference": 0.0198,
+      "retrieval_latency_mean_ms": 1255.424,
+      "retrieval_latency_median_ms": 1324.472,
+      "retrieval_latency_p95_ms": 1641.942,
+      "retrieval_overhead_vs_baseline_ms": -93.843,
+      "retrieval_overhead_ratio_vs_baseline": 0.93,
+      "turn_latency_mean_s": 4.587,
+      "turn_latency_median_s": 4.45,
+      "turn_latency_p95_s": 6.466,
+      "pair_acc (Affirmation and Reassurance vs Providing Suggestions)": 0.2088,
+      "pair_n (Affirmation and Reassurance vs Providing Suggestions)": 91,
+      "pair_acc (Affirmation and Reassurance vs Others)": 0.2737,
+      "pair_n (Affirmation and Reassurance vs Others)": 95,
+      "pair_acc (Affirmation and Reassurance vs Reflection of feelings)": 0.1,
+      "pair_n (Affirmation and Reassurance vs Reflection of feelings)": 60,
+      "pair_acc (Affirmation and Reassurance vs Question)": 0.3232,
+      "pair_n (Affirmation and Reassurance vs Question)": 99,
+      "pair_acc (Others vs Providing Suggestions)": 0.3302,
+      "pair_n (Others vs Providing Suggestions)": 106,
+      "confusable_pairs_mean_accuracy": 0.2472,
+      "n_response_deliberation_turns": 300,
+      "delib_response_distinct_1": 0.2812,
+      "delib_response_distinct_2": 0.6789,
+      "delib_response_bleu_1": 0.0644,
+      "delib_response_bleu_2": 0.0173,
+      "delib_response_bleu_3": 0.0067,
+      "delib_response_f1": 0.0925,
+      "delib_response_rouge_l": 0.0791,
+      "n_response_all_turns": 300,
+      "response_distinct_1": 0.2812,
+      "response_distinct_2": 0.6789,
+      "response_bleu_1": 0.0644,
+      "response_bleu_2": 0.0173,
+      "response_bleu_3": 0.0067,
+      "response_f1": 0.0925,
+      "response_rouge_l": 0.0791
+    }
+  ],
+  "esconv_reference_metadata": {
+    "split": "all",
+    "n_conversations": 1300,
+    "n_single_label_turns": 12261,
+    "n_composite_turns_excluded": 2716,
+    "counts": {
+      "Question": 2447,
+      "Restatement or Paraphrasing": 835,
+      "Reflection of feelings": 960,
+      "Self-disclosure": 1062,
+      "Affirmation and Reassurance": 1930,
+      "Providing Suggestions": 2020,
+      "Information": 817,
+      "Others": 2190
+    },
+    "distribution": {
+      "Question": 0.19957589103662018,
+      "Restatement or Paraphrasing": 0.0681021123888753,
+      "Reflection of feelings": 0.07829703939319795,
+      "Self-disclosure": 0.08661609982872523,
+      "Affirmation and Reassurance": 0.1574096729467417,
+      "Providing Suggestions": 0.164750020389854,
+      "Information": 0.06663404290025284,
+      "Others": 0.1786151211157328
+    }
+  },
+  "confirmed_confusable_pairs": [
+    [
+      "Affirmation and Reassurance",
+      "Providing Suggestions"
+    ],
+    [
+      "Affirmation and Reassurance",
+      "Others"
+    ],
+    [
+      "Affirmation and Reassurance",
+      "Reflection of feelings"
+    ],
+    [
+      "Affirmation and Reassurance",
+      "Question"
+    ],
+    [
+      "Others",
+      "Providing Suggestions"
+    ]
+  ],
+  "full_reports": [
+    {
+      "n_total_turns": 300,
+      "n_single_label_turns": 300,
+      "n_eligible_turns": 300,
+      "none": {
+        "none_count": 0,
+        "total": 300,
+        "none_rate": 0.0
+      },
+      "composite": {
+        "composite_count": 0,
+        "total": 300,
+        "composite_rate": 0.0
+      },
+      "macro_f1": 0.15189590680594484,
+      "per_strategy": {
+        "Question": {
+          "precision": 0.5384615384615384,
+          "recall": 0.11864406779661017,
+          "f1": 0.19444444444444445,
+          "support": 59,
+          "predicted_count": 13
+        },
+        "Restatement or Paraphrasing": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 14,
+          "predicted_count": 7
+        },
+        "Reflection of feelings": {
+          "precision": 0.1111111111111111,
+          "recall": 0.25,
+          "f1": 0.15384615384615383,
+          "support": 20,
+          "predicted_count": 45
+        },
+        "Self-disclosure": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 35,
+          "predicted_count": 1
+        },
+        "Affirmation and Reassurance": {
+          "precision": 0.13725490196078433,
+          "recall": 0.35,
+          "f1": 0.1971830985915493,
+          "support": 40,
+          "predicted_count": 102
+        },
+        "Providing Suggestions": {
+          "precision": 0.2818181818181818,
+          "recall": 0.6078431372549019,
+          "f1": 0.3850931677018633,
+          "support": 51,
+          "predicted_count": 110
+        },
+        "Information": {
+          "precision": 1.0,
+          "recall": 0.038461538461538464,
+          "f1": 0.07407407407407407,
+          "support": 26,
+          "predicted_count": 1
+        },
+        "Others": {
+          "precision": 0.38095238095238093,
+          "recall": 0.14545454545454545,
+          "f1": 0.21052631578947364,
+          "support": 55,
+          "predicted_count": 21
+        }
+      },
+      "confusion_matrix": {
+        "Question": {
+          "Question": 7,
+          "Restatement or Paraphrasing": 4,
+          "Reflection of feelings": 11,
+          "Self-disclosure": 1,
+          "Affirmation and Reassurance": 18,
+          "Providing Suggestions": 15,
+          "Information": 0,
+          "Others": 3
+        },
+        "Restatement or Paraphrasing": {
+          "Question": 1,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 0,
+          "Affirmation and Reassurance": 6,
+          "Providing Suggestions": 5,
+          "Information": 0,
+          "Others": 1
+        },
+        "Reflection of feelings": {
+          "Question": 1,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 5,
+          "Self-disclosure": 0,
+          "Affirmation and Reassurance": 7,
+          "Providing Suggestions": 5,
+          "Information": 0,
+          "Others": 2
+        },
+        "Self-disclosure": {
+          "Question": 1,
+          "Restatement or Paraphrasing": 1,
+          "Reflection of feelings": 11,
+          "Self-disclosure": 0,
+          "Affirmation and Reassurance": 10,
+          "Providing Suggestions": 11,
+          "Information": 0,
+          "Others": 1
+        },
+        "Affirmation and Reassurance": {
+          "Question": 1,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 4,
+          "Self-disclosure": 0,
+          "Affirmation and Reassurance": 14,
+          "Providing Suggestions": 17,
+          "Information": 0,
+          "Others": 4
+        },
+        "Providing Suggestions": {
+          "Question": 1,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 3,
+          "Self-disclosure": 0,
+          "Affirmation and Reassurance": 15,
+          "Providing Suggestions": 31,
+          "Information": 0,
+          "Others": 1
+        },
+        "Information": {
+          "Question": 0,
+          "Restatement or Paraphrasing": 1,
+          "Reflection of feelings": 5,
+          "Self-disclosure": 0,
+          "Affirmation and Reassurance": 7,
+          "Providing Suggestions": 11,
+          "Information": 1,
+          "Others": 1
+        },
+        "Others": {
+          "Question": 1,
+          "Restatement or Paraphrasing": 1,
+          "Reflection of feelings": 5,
+          "Self-disclosure": 0,
+          "Affirmation and Reassurance": 25,
+          "Providing Suggestions": 15,
+          "Information": 0,
+          "Others": 8
+        }
+      },
+      "predicted_distribution": {
+        "Question": 0.043333333333333335,
+        "Restatement or Paraphrasing": 0.023333333333333334,
+        "Reflection of feelings": 0.15,
+        "Self-disclosure": 0.0033333333333333335,
+        "Affirmation and Reassurance": 0.34,
+        "Providing Suggestions": 0.36666666666666664,
+        "Information": 0.0033333333333333335,
+        "Others": 0.07
+      },
+      "gold_distribution": {
+        "Question": 0.19666666666666666,
+        "Restatement or Paraphrasing": 0.04666666666666667,
+        "Reflection of feelings": 0.06666666666666667,
+        "Self-disclosure": 0.11666666666666667,
+        "Affirmation and Reassurance": 0.13333333333333333,
+        "Providing Suggestions": 0.17,
+        "Information": 0.08666666666666667,
+        "Others": 0.18333333333333332
+      },
+      "gold_distribution_all_single_label": {
+        "Question": 0.19666666666666666,
+        "Restatement or Paraphrasing": 0.04666666666666667,
+        "Reflection of feelings": 0.06666666666666667,
+        "Self-disclosure": 0.11666666666666667,
+        "Affirmation and Reassurance": 0.13333333333333333,
+        "Providing Suggestions": 0.17,
+        "Information": 0.08666666666666667,
+        "Others": 0.18333333333333332
+      },
+      "js_divergence_vs_test_gold": 0.21592497171425978,
+      "latency": {
+        "retrieval_ms": {
+          "n": 300,
+          "mean": 1349.2666766663508,
+          "median": 1297.0724999904633,
+          "p95": 1753.9377549874189,
+          "min": 712.5902000116184,
+          "max": 15864.4723000034
+        },
+        "deliberation_turn_s": {
+          "n": 300,
+          "mean": 8.441879754000208,
+          "median": 8.324596450001991,
+          "p95": 9.991874370004371,
+          "min": 6.409799599990947,
+          "max": 22.88311850000173
+        },
+        "all_turn_s": {
+          "n": 300,
+          "mean": 8.441879754000208,
+          "median": 8.324596450001991,
+          "p95": 9.991874370004371,
+          "min": 6.409799599990947,
+          "max": 22.88311850000173
+        }
+      },
+      "js_divergence_vs_esconv_reference": 0.18664548953345642,
+      "js_divergence_vs_global_reference": 0.18664548953345642,
+      "confusable_pair_accuracy": {
+        "Affirmation and Reassurance vs Providing Suggestions": {
+          "n": 91,
+          "accuracy": 0.4945054945054945,
+          "correct": 45,
+          "mutual_confusions": 32,
+          "support_a": 40,
+          "support_b": 51
+        },
+        "Affirmation and Reassurance vs Others": {
+          "n": 95,
+          "accuracy": 0.23157894736842105,
+          "correct": 22,
+          "mutual_confusions": 29,
+          "support_a": 40,
+          "support_b": 55
+        },
+        "Affirmation and Reassurance vs Reflection of feelings": {
+          "n": 60,
+          "accuracy": 0.31666666666666665,
+          "correct": 19,
+          "mutual_confusions": 11,
+          "support_a": 40,
+          "support_b": 20
+        },
+        "Affirmation and Reassurance vs Question": {
+          "n": 99,
+          "accuracy": 0.21212121212121213,
+          "correct": 21,
+          "mutual_confusions": 19,
+          "support_a": 40,
+          "support_b": 59
+        },
+        "Others vs Providing Suggestions": {
+          "n": 106,
+          "accuracy": 0.36792452830188677,
+          "correct": 39,
+          "mutual_confusions": 16,
+          "support_a": 55,
+          "support_b": 51
+        }
+      },
+      "response_metrics": {
+        "n_evaluated": 300,
+        "distinct_1": 0.28254847645429365,
+        "distinct_2": 0.6770392749244712,
+        "bleu_1": 0.054667836147856384,
+        "bleu_2": 0.011196565218461942,
+        "bleu_3": 0.003983819216188781,
+        "f1": 0.08175659240376226,
+        "rouge_l": 0.07274831931271818
+      },
+      "response_metrics_deliberation": {
+        "n_evaluated": 300,
+        "distinct_1": 0.28254847645429365,
+        "distinct_2": 0.6770392749244712,
+        "bleu_1": 0.054667836147856384,
+        "bleu_2": 0.011196565218461942,
+        "bleu_3": 0.003983819216188781,
+        "f1": 0.08175659240376226,
+        "rouge_l": 0.07274831931271818
+      }
+    },
+    {
+      "n_total_turns": 300,
+      "n_single_label_turns": 300,
+      "n_eligible_turns": 300,
+      "none": {
+        "none_count": 0,
+        "total": 300,
+        "none_rate": 0.0
+      },
+      "composite": {
+        "composite_count": 0,
+        "total": 300,
+        "composite_rate": 0.0
+      },
+      "macro_f1": 0.1392729127146162,
+      "per_strategy": {
+        "Question": {
+          "precision": 0.2897196261682243,
+          "recall": 0.5254237288135594,
+          "f1": 0.3734939759036144,
+          "support": 59,
+          "predicted_count": 107
+        },
+        "Restatement or Paraphrasing": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 14,
+          "predicted_count": 12
+        },
+        "Reflection of feelings": {
+          "precision": 0.05,
+          "recall": 0.05,
+          "f1": 0.05000000000000001,
+          "support": 20,
+          "predicted_count": 20
+        },
+        "Self-disclosure": {
+          "precision": 0.13333333333333333,
+          "recall": 0.05714285714285714,
+          "f1": 0.08,
+          "support": 35,
+          "predicted_count": 15
+        },
+        "Affirmation and Reassurance": {
+          "precision": 0.14285714285714285,
+          "recall": 0.125,
+          "f1": 0.13333333333333333,
+          "support": 40,
+          "predicted_count": 35
+        },
+        "Providing Suggestions": {
+          "precision": 0.22413793103448276,
+          "recall": 0.2549019607843137,
+          "f1": 0.23853211009174313,
+          "support": 51,
+          "predicted_count": 58
+        },
+        "Information": {
+          "precision": 0.14285714285714285,
+          "recall": 0.038461538461538464,
+          "f1": 0.060606060606060615,
+          "support": 26,
+          "predicted_count": 7
+        },
+        "Others": {
+          "precision": 0.1956521739130435,
+          "recall": 0.16363636363636364,
+          "f1": 0.1782178217821782,
+          "support": 55,
+          "predicted_count": 46
+        }
+      },
+      "confusion_matrix": {
+        "Question": {
+          "Question": 31,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 4,
+          "Self-disclosure": 4,
+          "Affirmation and Reassurance": 6,
+          "Providing Suggestions": 7,
+          "Information": 3,
+          "Others": 2
+        },
+        "Restatement or Paraphrasing": {
+          "Question": 8,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 0,
+          "Affirmation and Reassurance": 1,
+          "Providing Suggestions": 1,
+          "Information": 0,
+          "Others": 3
+        },
+        "Reflection of feelings": {
+          "Question": 6,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 1,
+          "Affirmation and Reassurance": 2,
+          "Providing Suggestions": 5,
+          "Information": 0,
+          "Others": 5
+        },
+        "Self-disclosure": {
+          "Question": 10,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 2,
+          "Self-disclosure": 2,
+          "Affirmation and Reassurance": 6,
+          "Providing Suggestions": 10,
+          "Information": 1,
+          "Others": 2
+        },
+        "Affirmation and Reassurance": {
+          "Question": 17,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 1,
+          "Affirmation and Reassurance": 5,
+          "Providing Suggestions": 5,
+          "Information": 0,
+          "Others": 9
+        },
+        "Providing Suggestions": {
+          "Question": 10,
+          "Restatement or Paraphrasing": 1,
+          "Reflection of feelings": 7,
+          "Self-disclosure": 2,
+          "Affirmation and Reassurance": 6,
+          "Providing Suggestions": 13,
+          "Information": 2,
+          "Others": 10
+        },
+        "Information": {
+          "Question": 6,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 2,
+          "Affirmation and Reassurance": 6,
+          "Providing Suggestions": 2,
+          "Information": 1,
+          "Others": 6
+        },
+        "Others": {
+          "Question": 19,
+          "Restatement or Paraphrasing": 3,
+          "Reflection of feelings": 3,
+          "Self-disclosure": 3,
+          "Affirmation and Reassurance": 3,
+          "Providing Suggestions": 15,
+          "Information": 0,
+          "Others": 9
+        }
+      },
+      "predicted_distribution": {
+        "Question": 0.3566666666666667,
+        "Restatement or Paraphrasing": 0.04,
+        "Reflection of feelings": 0.06666666666666667,
+        "Self-disclosure": 0.05,
+        "Affirmation and Reassurance": 0.11666666666666667,
+        "Providing Suggestions": 0.19333333333333333,
+        "Information": 0.023333333333333334,
+        "Others": 0.15333333333333332
+      },
+      "gold_distribution": {
+        "Question": 0.19666666666666666,
+        "Restatement or Paraphrasing": 0.04666666666666667,
+        "Reflection of feelings": 0.06666666666666667,
+        "Self-disclosure": 0.11666666666666667,
+        "Affirmation and Reassurance": 0.13333333333333333,
+        "Providing Suggestions": 0.17,
+        "Information": 0.08666666666666667,
+        "Others": 0.18333333333333332
+      },
+      "gold_distribution_all_single_label": {
+        "Question": 0.19666666666666666,
+        "Restatement or Paraphrasing": 0.04666666666666667,
+        "Reflection of feelings": 0.06666666666666667,
+        "Self-disclosure": 0.11666666666666667,
+        "Affirmation and Reassurance": 0.13333333333333333,
+        "Providing Suggestions": 0.17,
+        "Information": 0.08666666666666667,
+        "Others": 0.18333333333333332
+      },
+      "js_divergence_vs_test_gold": 0.04290869191394524,
+      "latency": {
+        "retrieval_ms": {
+          "n": 300,
+          "mean": 1147.163284666555,
+          "median": 1070.467199999257,
+          "p95": 1460.0568499939982,
+          "min": 710.2428999933181,
+          "max": 18563.96169999789
+        },
+        "deliberation_turn_s": {
+          "n": 300,
+          "mean": 5.690266966667114,
+          "median": 5.661834200000158,
+          "p95": 6.58827562500519,
+          "min": 4.031457999997656,
+          "max": 22.495558299997356
+        },
+        "all_turn_s": {
+          "n": 300,
+          "mean": 5.690266966667114,
+          "median": 5.661834200000158,
+          "p95": 6.58827562500519,
+          "min": 4.031457999997656,
+          "max": 22.495558299997356
+        }
+      },
+      "js_divergence_vs_esconv_reference": 0.03435561587664406,
+      "js_divergence_vs_global_reference": 0.03435561587664406,
+      "confusable_pair_accuracy": {
+        "Affirmation and Reassurance vs Providing Suggestions": {
+          "n": 91,
+          "accuracy": 0.1978021978021978,
+          "correct": 18,
+          "mutual_confusions": 11,
+          "support_a": 40,
+          "support_b": 51
+        },
+        "Affirmation and Reassurance vs Others": {
+          "n": 95,
+          "accuracy": 0.14736842105263157,
+          "correct": 14,
+          "mutual_confusions": 12,
+          "support_a": 40,
+          "support_b": 55
+        },
+        "Affirmation and Reassurance vs Reflection of feelings": {
+          "n": 60,
+          "accuracy": 0.1,
+          "correct": 6,
+          "mutual_confusions": 3,
+          "support_a": 40,
+          "support_b": 20
+        },
+        "Affirmation and Reassurance vs Question": {
+          "n": 99,
+          "accuracy": 0.36363636363636365,
+          "correct": 36,
+          "mutual_confusions": 23,
+          "support_a": 40,
+          "support_b": 59
+        },
+        "Others vs Providing Suggestions": {
+          "n": 106,
+          "accuracy": 0.20754716981132076,
+          "correct": 22,
+          "mutual_confusions": 25,
+          "support_a": 55,
+          "support_b": 51
+        }
+      },
+      "response_metrics": {
+        "n_evaluated": 300,
+        "distinct_1": 0.287598944591029,
+        "distinct_2": 0.691404011461318,
+        "bleu_1": 0.06782409315822316,
+        "bleu_2": 0.018462030114998723,
+        "bleu_3": 0.0066397361913324215,
+        "f1": 0.09398144080574583,
+        "rouge_l": 0.07854683381371487
+      },
+      "response_metrics_deliberation": {
+        "n_evaluated": 300,
+        "distinct_1": 0.287598944591029,
+        "distinct_2": 0.691404011461318,
+        "bleu_1": 0.06782409315822316,
+        "bleu_2": 0.018462030114998723,
+        "bleu_3": 0.0066397361913324215,
+        "f1": 0.09398144080574583,
+        "rouge_l": 0.07854683381371487
+      }
+    },
+    {
+      "n_total_turns": 300,
+      "n_single_label_turns": 300,
+      "n_eligible_turns": 300,
+      "none": {
+        "none_count": 0,
+        "total": 300,
+        "none_rate": 0.0
+      },
+      "composite": {
+        "composite_count": 0,
+        "total": 300,
+        "composite_rate": 0.0
+      },
+      "macro_f1": 0.14297645443986906,
+      "per_strategy": {
+        "Question": {
+          "precision": 0.2857142857142857,
+          "recall": 0.5084745762711864,
+          "f1": 0.36585365853658536,
+          "support": 59,
+          "predicted_count": 105
+        },
+        "Restatement or Paraphrasing": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 14,
+          "predicted_count": 13
+        },
+        "Reflection of feelings": {
+          "precision": 0.047619047619047616,
+          "recall": 0.05,
+          "f1": 0.04878048780487805,
+          "support": 20,
+          "predicted_count": 21
+        },
+        "Self-disclosure": {
+          "precision": 0.06666666666666667,
+          "recall": 0.02857142857142857,
+          "f1": 0.04,
+          "support": 35,
+          "predicted_count": 15
+        },
+        "Affirmation and Reassurance": {
+          "precision": 0.14285714285714285,
+          "recall": 0.125,
+          "f1": 0.13333333333333333,
+          "support": 40,
+          "predicted_count": 35
+        },
+        "Providing Suggestions": {
+          "precision": 0.24074074074074073,
+          "recall": 0.2549019607843137,
+          "f1": 0.24761904761904763,
+          "support": 51,
+          "predicted_count": 54
+        },
+        "Information": {
+          "precision": 0.14285714285714285,
+          "recall": 0.038461538461538464,
+          "f1": 0.060606060606060615,
+          "support": 26,
+          "predicted_count": 7
+        },
+        "Others": {
+          "precision": 0.26,
+          "recall": 0.23636363636363636,
+          "f1": 0.24761904761904763,
+          "support": 55,
+          "predicted_count": 50
+        }
+      },
+      "confusion_matrix": {
+        "Question": {
+          "Question": 30,
+          "Restatement or Paraphrasing": 3,
+          "Reflection of feelings": 6,
+          "Self-disclosure": 4,
+          "Affirmation and Reassurance": 6,
+          "Providing Suggestions": 5,
+          "Information": 3,
+          "Others": 2
+        },
+        "Restatement or Paraphrasing": {
+          "Question": 6,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 0,
+          "Affirmation and Reassurance": 1,
+          "Providing Suggestions": 2,
+          "Information": 0,
+          "Others": 4
+        },
+        "Reflection of feelings": {
+          "Question": 5,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 1,
+          "Affirmation and Reassurance": 2,
+          "Providing Suggestions": 5,
+          "Information": 1,
+          "Others": 5
+        },
+        "Self-disclosure": {
+          "Question": 10,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 2,
+          "Self-disclosure": 1,
+          "Affirmation and Reassurance": 6,
+          "Providing Suggestions": 10,
+          "Information": 1,
+          "Others": 3
+        },
+        "Affirmation and Reassurance": {
+          "Question": 20,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 1,
+          "Affirmation and Reassurance": 5,
+          "Providing Suggestions": 4,
+          "Information": 0,
+          "Others": 7
+        },
+        "Providing Suggestions": {
+          "Question": 10,
+          "Restatement or Paraphrasing": 1,
+          "Reflection of feelings": 7,
+          "Self-disclosure": 4,
+          "Affirmation and Reassurance": 5,
+          "Providing Suggestions": 13,
+          "Information": 1,
+          "Others": 10
+        },
+        "Information": {
+          "Question": 6,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 1,
+          "Affirmation and Reassurance": 7,
+          "Providing Suggestions": 2,
+          "Information": 1,
+          "Others": 6
+        },
+        "Others": {
+          "Question": 18,
+          "Restatement or Paraphrasing": 3,
+          "Reflection of feelings": 2,
+          "Self-disclosure": 3,
+          "Affirmation and Reassurance": 3,
+          "Providing Suggestions": 13,
+          "Information": 0,
+          "Others": 13
+        }
+      },
+      "predicted_distribution": {
+        "Question": 0.35,
+        "Restatement or Paraphrasing": 0.043333333333333335,
+        "Reflection of feelings": 0.07,
+        "Self-disclosure": 0.05,
+        "Affirmation and Reassurance": 0.11666666666666667,
+        "Providing Suggestions": 0.18,
+        "Information": 0.023333333333333334,
+        "Others": 0.16666666666666666
+      },
+      "gold_distribution": {
+        "Question": 0.19666666666666666,
+        "Restatement or Paraphrasing": 0.04666666666666667,
+        "Reflection of feelings": 0.06666666666666667,
+        "Self-disclosure": 0.11666666666666667,
+        "Affirmation and Reassurance": 0.13333333333333333,
+        "Providing Suggestions": 0.17,
+        "Information": 0.08666666666666667,
+        "Others": 0.18333333333333332
+      },
+      "gold_distribution_all_single_label": {
+        "Question": 0.19666666666666666,
+        "Restatement or Paraphrasing": 0.04666666666666667,
+        "Reflection of feelings": 0.06666666666666667,
+        "Self-disclosure": 0.11666666666666667,
+        "Affirmation and Reassurance": 0.13333333333333333,
+        "Providing Suggestions": 0.17,
+        "Information": 0.08666666666666667,
+        "Others": 0.18333333333333332
+      },
+      "js_divergence_vs_test_gold": 0.040475258650130394,
+      "latency": {
+        "retrieval_ms": {
+          "n": 300,
+          "mean": 1280.9400166664757,
+          "median": 1387.494250004238,
+          "p95": 1730.157854993013,
+          "min": 698.9017000014428,
+          "max": 6467.9647000011755
+        },
+        "deliberation_turn_s": {
+          "n": 300,
+          "mean": 4.947871936000398,
+          "median": 4.814478649997909,
+          "p95": 6.592938664997929,
+          "min": 2.9266095999919344,
+          "max": 9.36008810000203
+        },
+        "all_turn_s": {
+          "n": 300,
+          "mean": 4.947871936000398,
+          "median": 4.814478649997909,
+          "p95": 6.592938664997929,
+          "min": 2.9266095999919344,
+          "max": 9.36008810000203
+        }
+      },
+      "js_divergence_vs_esconv_reference": 0.031216854977538462,
+      "js_divergence_vs_global_reference": 0.031216854977538462,
+      "confusable_pair_accuracy": {
+        "Affirmation and Reassurance vs Providing Suggestions": {
+          "n": 91,
+          "accuracy": 0.1978021978021978,
+          "correct": 18,
+          "mutual_confusions": 9,
+          "support_a": 40,
+          "support_b": 51
+        },
+        "Affirmation and Reassurance vs Others": {
+          "n": 95,
+          "accuracy": 0.18947368421052632,
+          "correct": 18,
+          "mutual_confusions": 10,
+          "support_a": 40,
+          "support_b": 55
+        },
+        "Affirmation and Reassurance vs Reflection of feelings": {
+          "n": 60,
+          "accuracy": 0.1,
+          "correct": 6,
+          "mutual_confusions": 3,
+          "support_a": 40,
+          "support_b": 20
+        },
+        "Affirmation and Reassurance vs Question": {
+          "n": 99,
+          "accuracy": 0.35353535353535354,
+          "correct": 35,
+          "mutual_confusions": 26,
+          "support_a": 40,
+          "support_b": 59
+        },
+        "Others vs Providing Suggestions": {
+          "n": 106,
+          "accuracy": 0.24528301886792453,
+          "correct": 26,
+          "mutual_confusions": 23,
+          "support_a": 55,
+          "support_b": 51
+        }
+      },
+      "response_metrics": {
+        "n_evaluated": 300,
+        "distinct_1": 0.28509951586874666,
+        "distinct_2": 0.684610883557636,
+        "bleu_1": 0.06359654745759906,
+        "bleu_2": 0.016338195157219442,
+        "bleu_3": 0.006485287638874995,
+        "f1": 0.09052589763923172,
+        "rouge_l": 0.07664603806314019
+      },
+      "response_metrics_deliberation": {
+        "n_evaluated": 300,
+        "distinct_1": 0.28509951586874666,
+        "distinct_2": 0.684610883557636,
+        "bleu_1": 0.06359654745759906,
+        "bleu_2": 0.016338195157219442,
+        "bleu_3": 0.006485287638874995,
+        "f1": 0.09052589763923172,
+        "rouge_l": 0.07664603806314019
+      }
+    },
+    {
+      "n_total_turns": 300,
+      "n_single_label_turns": 300,
+      "n_eligible_turns": 300,
+      "none": {
+        "none_count": 0,
+        "total": 300,
+        "none_rate": 0.0
+      },
+      "composite": {
+        "composite_count": 0,
+        "total": 300,
+        "composite_rate": 0.0
+      },
+      "macro_f1": 0.16547701520936,
+      "per_strategy": {
+        "Question": {
+          "precision": 0.29347826086956524,
+          "recall": 0.4576271186440678,
+          "f1": 0.3576158940397351,
+          "support": 59,
+          "predicted_count": 92
+        },
+        "Restatement or Paraphrasing": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 14,
+          "predicted_count": 14
+        },
+        "Reflection of feelings": {
+          "precision": 0.038461538461538464,
+          "recall": 0.05,
+          "f1": 0.043478260869565216,
+          "support": 20,
+          "predicted_count": 26
+        },
+        "Self-disclosure": {
+          "precision": 0.10526315789473684,
+          "recall": 0.05714285714285714,
+          "f1": 0.07407407407407407,
+          "support": 35,
+          "predicted_count": 19
+        },
+        "Affirmation and Reassurance": {
+          "precision": 0.13513513513513514,
+          "recall": 0.125,
+          "f1": 0.12987012987012989,
+          "support": 40,
+          "predicted_count": 37
+        },
+        "Providing Suggestions": {
+          "precision": 0.3181818181818182,
+          "recall": 0.27450980392156865,
+          "f1": 0.2947368421052632,
+          "support": 51,
+          "predicted_count": 44
+        },
+        "Information": {
+          "precision": 0.125,
+          "recall": 0.038461538461538464,
+          "f1": 0.058823529411764705,
+          "support": 26,
+          "predicted_count": 8
+        },
+        "Others": {
+          "precision": 0.35,
+          "recall": 0.38181818181818183,
+          "f1": 0.3652173913043478,
+          "support": 55,
+          "predicted_count": 60
+        }
+      },
+      "confusion_matrix": {
+        "Question": {
+          "Question": 27,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 6,
+          "Self-disclosure": 4,
+          "Affirmation and Reassurance": 7,
+          "Providing Suggestions": 3,
+          "Information": 3,
+          "Others": 7
+        },
+        "Restatement or Paraphrasing": {
+          "Question": 5,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 1,
+          "Affirmation and Reassurance": 2,
+          "Providing Suggestions": 1,
+          "Information": 0,
+          "Others": 4
+        },
+        "Reflection of feelings": {
+          "Question": 6,
+          "Restatement or Paraphrasing": 0,
+          "Reflection of feelings": 1,
+          "Self-disclosure": 2,
+          "Affirmation and Reassurance": 4,
+          "Providing Suggestions": 4,
+          "Information": 0,
+          "Others": 3
+        },
+        "Self-disclosure": {
+          "Question": 8,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 4,
+          "Self-disclosure": 2,
+          "Affirmation and Reassurance": 6,
+          "Providing Suggestions": 8,
+          "Information": 1,
+          "Others": 4
+        },
+        "Affirmation and Reassurance": {
+          "Question": 18,
+          "Restatement or Paraphrasing": 1,
+          "Reflection of feelings": 4,
+          "Self-disclosure": 1,
+          "Affirmation and Reassurance": 5,
+          "Providing Suggestions": 3,
+          "Information": 0,
+          "Others": 8
+        },
+        "Providing Suggestions": {
+          "Question": 9,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 5,
+          "Self-disclosure": 3,
+          "Affirmation and Reassurance": 7,
+          "Providing Suggestions": 14,
+          "Information": 3,
+          "Others": 8
+        },
+        "Information": {
+          "Question": 3,
+          "Restatement or Paraphrasing": 2,
+          "Reflection of feelings": 5,
+          "Self-disclosure": 2,
+          "Affirmation and Reassurance": 5,
+          "Providing Suggestions": 3,
+          "Information": 1,
+          "Others": 5
+        },
+        "Others": {
+          "Question": 16,
+          "Restatement or Paraphrasing": 5,
+          "Reflection of feelings": 0,
+          "Self-disclosure": 4,
+          "Affirmation and Reassurance": 1,
+          "Providing Suggestions": 8,
+          "Information": 0,
+          "Others": 21
+        }
+      },
+      "predicted_distribution": {
+        "Question": 0.30666666666666664,
+        "Restatement or Paraphrasing": 0.04666666666666667,
+        "Reflection of feelings": 0.08666666666666667,
+        "Self-disclosure": 0.06333333333333334,
+        "Affirmation and Reassurance": 0.12333333333333334,
+        "Providing Suggestions": 0.14666666666666667,
+        "Information": 0.02666666666666667,
+        "Others": 0.2
+      },
+      "gold_distribution": {
+        "Question": 0.19666666666666666,
+        "Restatement or Paraphrasing": 0.04666666666666667,
+        "Reflection of feelings": 0.06666666666666667,
+        "Self-disclosure": 0.11666666666666667,
+        "Affirmation and Reassurance": 0.13333333333333333,
+        "Providing Suggestions": 0.17,
+        "Information": 0.08666666666666667,
+        "Others": 0.18333333333333332
+      },
+      "gold_distribution_all_single_label": {
+        "Question": 0.19666666666666666,
+        "Restatement or Paraphrasing": 0.04666666666666667,
+        "Reflection of feelings": 0.06666666666666667,
+        "Self-disclosure": 0.11666666666666667,
+        "Affirmation and Reassurance": 0.13333333333333333,
+        "Providing Suggestions": 0.17,
+        "Information": 0.08666666666666667,
+        "Others": 0.18333333333333332
+      },
+      "js_divergence_vs_test_gold": 0.028555946340502163,
+      "latency": {
+        "retrieval_ms": {
+          "n": 300,
+          "mean": 1255.4236633332039,
+          "median": 1324.4715000037104,
+          "p95": 1641.941729989776,
+          "min": 704.6442999999272,
+          "max": 2999.91100000625
+        },
+        "deliberation_turn_s": {
+          "n": 300,
+          "mean": 4.587458685666352,
+          "median": 4.450215650002065,
+          "p95": 6.466148560001603,
+          "min": 1.198983499998576,
+          "max": 8.616986499997438
+        },
+        "all_turn_s": {
+          "n": 300,
+          "mean": 4.587458685666352,
+          "median": 4.450215650002065,
+          "p95": 6.466148560001603,
+          "min": 1.198983499998576,
+          "max": 8.616986499997438
+        }
+      },
+      "js_divergence_vs_esconv_reference": 0.019837266065100542,
+      "js_divergence_vs_global_reference": 0.019837266065100542,
+      "confusable_pair_accuracy": {
+        "Affirmation and Reassurance vs Providing Suggestions": {
+          "n": 91,
+          "accuracy": 0.2087912087912088,
+          "correct": 19,
+          "mutual_confusions": 10,
+          "support_a": 40,
+          "support_b": 51
+        },
+        "Affirmation and Reassurance vs Others": {
+          "n": 95,
+          "accuracy": 0.2736842105263158,
+          "correct": 26,
+          "mutual_confusions": 9,
+          "support_a": 40,
+          "support_b": 55
+        },
+        "Affirmation and Reassurance vs Reflection of feelings": {
+          "n": 60,
+          "accuracy": 0.1,
+          "correct": 6,
+          "mutual_confusions": 8,
+          "support_a": 40,
+          "support_b": 20
+        },
+        "Affirmation and Reassurance vs Question": {
+          "n": 99,
+          "accuracy": 0.32323232323232326,
+          "correct": 32,
+          "mutual_confusions": 25,
+          "support_a": 40,
+          "support_b": 59
+        },
+        "Others vs Providing Suggestions": {
+          "n": 106,
+          "accuracy": 0.330188679245283,
+          "correct": 35,
+          "mutual_confusions": 16,
+          "support_a": 55,
+          "support_b": 51
+        }
+      },
+      "response_metrics": {
+        "n_evaluated": 300,
+        "distinct_1": 0.281216361679225,
+        "distinct_2": 0.6788641686182669,
+        "bleu_1": 0.06443208789644704,
+        "bleu_2": 0.017332191658258295,
+        "bleu_3": 0.006745194715431045,
+        "f1": 0.09250920964958441,
+        "rouge_l": 0.07908586397221452
+      },
+      "response_metrics_deliberation": {
+        "n_evaluated": 300,
+        "distinct_1": 0.281216361679225,
+        "distinct_2": 0.6788641686182669,
+        "bleu_1": 0.06443208789644704,
+        "bleu_2": 0.017332191658258295,
+        "bleu_3": 0.006745194715431045,
+        "f1": 0.09250920964958441,
+        "rouge_l": 0.07908586397221452
+      }
+    }
+  ]
+}

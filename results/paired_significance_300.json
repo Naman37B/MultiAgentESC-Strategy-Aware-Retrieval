@@ -1,0 +1,22 @@
+{
+  "comparison": "D - A",
+  "n_turns": 300,
+  "n_conversation_clusters": 195,
+  "baseline_macro_f1": 0.15189590680594484,
+  "modified_macro_f1": 0.16547701520935998,
+  "macro_f1_difference": 0.013581108403415143,
+  "baseline_correct": 66,
+  "modified_correct": 71,
+  "modified_only_correct": 50,
+  "baseline_only_correct": 45,
+  "mcnemar_exact_two_sided_p": 0.6817425059181855,
+  "bootstrap": {
+    "method": "conversation-cluster percentile bootstrap",
+    "replicates": 50000,
+    "seed": 2026,
+    "confidence_level": 0.95,
+    "difference_ci_low": -0.037668029221313626,
+    "difference_ci_high": 0.0645659889623912,
+    "fraction_bootstrap_differences_above_zero": 0.69968
+  }
+}
