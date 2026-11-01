@@ -1,107 +1,48 @@
+# MultiAgentESC Strategy-Aware Hybrid Retrieval — curated project source
 
-# Strategy-Aware Hybrid Retrieval for MultiAgentESC
+This archive contains the files needed to inspect the implementation, reproduce the four final experiment arms (subject to local model availability), rerun analysis, and run the unit tests. It intentionally excludes caches, duplicate embedding files, private configuration, stale 150-turn runs, diagnostic outputs and unused scripts.
 
-An experimental extension of MultiAgentESC for emotional support conversations. This project investigates whether combining semantic retrieval, lexical retrieval, strategy-aware reranking, and contrastive strategy evidence improves support-strategy selection.
+## Environment
 
-## Project Overview
+- Python 3.10 or 3.11 is recommended for the pinned AutoGen 0.2.x stack.
+- Install dependencies: `pip install -r requirements.txt`.
+- Install Ollama and pull `qwen2.5:7b-instruct`.
+- Copy `OAI_CONFIG_LIST.example` to `OAI_CONFIG_LIST` and adjust the local endpoint/model only if your Ollama setup differs. The private/local config is not included.
+- The Sentence-Transformers model `all-roberta-large-v1` is downloaded on first use. Embedding caches are intentionally not bundled; they are regenerable.
 
-MultiAgentESC consists of three main stages:
+## Reproduce the recorded final experiment
 
-1. **Dialogue Analysis** — extracts relevant information about the user's emotional state, situation, and intention.
-2. **Strategy Deliberation** — retrieves similar historical examples and selects appropriate support strategies.
-3. **Response Generation** — generates and evaluates candidate support responses.
-
-Our modification focuses on retrieval inside Strategy Deliberation. The goal is to help the system distinguish analogous strategies and reduce biased strategy utilization.
-
-## What We Changed
-
-We evaluate four configurations:
-
-| Arm | Configuration |
-|---|---|
-| A — Baseline | Semantic retrieval using sentence embeddings and cosine similarity |
-| B — RRF | Semantic retrieval combined with BM25 lexical retrieval using Reciprocal Rank Fusion |
-| C — Reranking | RRF candidate retrieval followed by soft strategy-diversity reranking |
-| D — Full system | Reranking plus contrastive strategy evidence for selected confusable strategy pairs |
-
-The rest of the MultiAgentESC pipeline is kept unchanged for the main comparison so that we can study the effect of the retrieval modification.
-
-## Implementation
-
-Key files:
-
-- `src/strategy_aware_retrieval.py` — semantic retrieval, BM25, RRF, strategy-aware reranking, and contrastive evidence.
-- `src/integration_patch.py` — integrates the retrieval configurations into Strategy Deliberation.
-- `experiments/run_baseline.py` — experiment runner supporting all four configurations.
-- `experiments/run_confusion_analysis.py` — validation-based analysis of confused strategies.
-- `experiments/run_ablation.sh` — runs the four experiment configurations.
-- `experiments/analyze_results.py` — analyzes and compares experiment outputs.
-- `src/eval_metrics.py` — strategy-selection evaluation metrics.
-- `src/response_metrics.py` — response-quality metrics.
-- `tests/` — automated metric tests.
-- `INTEGRATION_NOTES.md` — implementation and experimental notes.
-
-## Dataset and Experimental Setup
-
-We use ESConv, a dataset of emotional-support conversations with annotated supporter strategies.
-
-The conversation-level split uses seed 42:
-
-| Split | Conversations |
-|---|---:|
-| Train | 910 |
-| Validation | 195 |
-| Test | 195 |
-| Total | 1,300 |
-
-The retrieval corpus is constructed from the training split only. Validation is used for identifying confusable strategy pairs and selecting parameters. The held-out test split is reserved for the final comparison.
-
-The reported comparison uses the same local Qwen2.5-7B model across all four configurations.
-
-**Dataset:** Obtain ESConv from its original source rather than committing a separate copy of the dataset to this repository.
-
-## Results
-
-The final held-out comparison evaluated up to 300 turns per configuration.
-
-| Configuration | Strategy Macro-F1 | JS Divergence |
-|---|---:|---:|
-| A — Baseline | 0.0588 | 0.4819 |
-| B — RRF | 0.0580 | 0.4812 |
-| C — Reranking | 0.0684 | 0.5382 |
-| D — Full system | 0.0771 | 0.5405 |
-
-The full system improved Macro-F1 by approximately 31.1% relative to the baseline. However, JS divergence increased, so the results do **not** demonstrate reduced strategy-utilization bias. The findings suggest that better retrieval alone does not guarantee better strategy decisions by the language model.
-
-These results are specific to the evaluated setup and should not be interpreted as an exact reproduction of the original paper's model-specific results.
-
-## Setup
-
-1. Clone this repository and install the dependencies listed in `requirements.txt`.
-2. Obtain ESConv from its original source and place the dataset at `dataset/ESConv.json`, as expected by the experiment runner.
-3. Configure a locally hosted, OpenAI-API-compatible model using your local configuration. Keep real credentials out of GitHub.
-4. Run the validation analysis and generate the confirmed confusable-pairs file before executing the full evidence configuration.
-5. Run the ablation experiment with a model name matching your local model configuration.
-
-The ablation script expects `results/confirmed_confusable_pairs.json` to exist before it runs.
-
-Example, after completing the validation analysis:
+The final saved run used seed 42, 300 selected test turns covering all 195 test conversations, and lambda 0.3 selected on validation. The frozen validation pairs and turn-ID files are included. To rerun the pipeline locally:
 
 ```bash
-bash experiments/run_ablation.sh 195 300 qwen2.5:7b
+python experiments/run_final_experiments.py --skip-judge
 ```
 
-See `INTEGRATION_NOTES.md` and the experiment scripts for configuration details.
+This performs the validation baseline/pair discovery and four test arms, then exports case studies and quantitative reports. The optional LLM judge was not run for the reported final results. Running without `--skip-judge` invokes an optional judge stage and creates new scores; do not mix those with the archived final metrics without documenting the protocol.
 
-## Acknowledgements
+## Tests
 
-This project builds on the released implementation of MultiAgentESC:
+```bash
+python -m pytest tests -q
+python -m compileall -q main.py multiagent.py prompt.py strategy.py src experiments tests
+```
 
-- Original repository: https://github.com/MindIntLab-HFUT/MultiAgentESC
-- ESConv dataset: https://github.com/thu-coai/Emotional-Support-Conversation
+## Results included
 
-Original paper:
+- Raw validation baseline and four paired test-arm outputs.
+- Identical ordered turn-ID selections for all test arms.
+- Validation lambda sweep and frozen confusion pairs.
+- Comparison table, Markdown evaluation report, seven final plots, balanced case studies, and paired statistical analysis.
+- Original project architecture images, copied unchanged.
 
-Xu et al., *MultiAgentESC: A LLM-based Multi-agent Collaboration Framework for Emotional Support Conversation*, EMNLP 2025.
+## Important implementation note
 
-Please refer to the original project for its authorship and citation details.
+In B, C and D, the original LLM strategy-selection function is called, but an additional rule-based selector replaces its proposed label. This selector combines lexical strategy support, hand-written context cues, training-set priors and cumulative within-run utilization counts. Its weights differ by arm. Therefore, the B/C/D results describe complete system variants and do not isolate RRF, reranking or contrastive evidence independently. The selector is sequential and can be order-dependent.
+
+## Dataset attribution and licence
+
+ESConv is by Liu et al. (ACL 2021). The Hugging Face dataset card identifies the dataset as CC BY-NC 4.0. Retain attribution and follow the non-commercial licence terms. See `dataset/README.md`.
+
+## Files intentionally excluded
+
+The source archive excludes `.cache/`, `42/cache.db`, `__pycache__/`, `.pytest_cache/`, virtual environments, both duplicate `embeddings_train.txt` caches, local `OAI_CONFIG_LIST`, old 150-turn experiments, old diagnostics, stale LLM-judge caches, the older `run_ablation.py` / `.sh` launchers, and the unused `src/autogen_compat.py`.

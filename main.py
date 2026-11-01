@@ -5,7 +5,13 @@ from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 import os
 import torch
-import autogen
+import sys
+if os.path.join(os.path.dirname(os.path.abspath(__file__)), "src") not in sys.path:
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "src"))
+try:
+    import autogen
+except ImportError:
+    import integration_patch as autogen
 import argparse
 from strategy import strategy_definitions
 from prompt import get_prompt
@@ -43,7 +49,7 @@ def remove_quotes(s):
 
 
 def get_cases():
-    with open('./dataset/ESConv.json', 'r') as f:
+    with open('./dataset/ESConv.json', 'r', encoding='utf-8') as f:
         samples = json.load(f)
         random.seed(42)
         random.shuffle(samples)     
@@ -69,25 +75,24 @@ def get_cases():
 
                  
 def clean_strategy(strategy):
-    cleaned_strategy = set()
+    mapping = {
+        "question": "Question",
+        "restatement or paraphrasing": "Restatement or Paraphrasing",
+        "reflection of feelings": "Reflection of feelings",
+        "self-disclosure": "Self-disclosure",
+        "affirmation and reassurance": "Affirmation and Reassurance",
+        "providing suggestions": "Providing Suggestions",
+        "information": "Information",
+        "others": "Others",
+    }
+    cleaned_strategy = []
+    seen = set()
     for s in strategy:
-        if s.lower() == "question":
-            cleaned_strategy.add("Question")
-        elif s.lower() == "restatement or paraphrasing":
-            cleaned_strategy.add("Restatement or Paraphrasing")
-        elif s.lower() == "reflection of feelings":
-            cleaned_strategy.add("Reflection of feelings")
-        elif s.lower() == "self-disclosure":
-            cleaned_strategy.add("Self-disclosure")
-        elif s.lower() == "affirmation and reassurance":
-            cleaned_strategy.add("Affirmation and Reassurance")
-        elif s.lower() == "providing suggestions":
-            cleaned_strategy.add("Providing Suggestions")
-        elif s.lower() == "information":
-            cleaned_strategy.add("Information")
-        elif s.lower() == "others":
-            cleaned_strategy.add("Others")    
-    return list(cleaned_strategy)
+        canon = mapping.get(s.strip().lower())
+        if canon and canon not in seen:
+            seen.add(canon)
+            cleaned_strategy.append(canon)
+    return cleaned_strategy
 
 
 def parse_args():
@@ -116,7 +121,7 @@ def set_seed(seed):
 def get_quadruple(model, dataset):  
     path = "./embeddings.txt"
     if not os.path.exists(path):
-        with open(path, 'a') as txt:
+        with open(path, 'a', encoding='utf-8') as txt:
             for sample in tqdm(dataset[100:]):
                 targets = []
                 dialog = sample['dialog']   
@@ -130,10 +135,10 @@ def get_quadruple(model, dataset):
                     strategy = triple[2]
                     line = f"{post}__SEP__{response}__SEP__{strategy}__SEP__{embedding}".replace("\n", "\\n") + "\n"
                     txt.write(line)
-        with open(path, "r") as txt:
+        with open(path, "r", encoding="utf-8") as txt:
             quadruple = txt.readlines()
     else:
-        with open(path, "r") as txt:
+        with open(path, "r", encoding="utf-8") as txt:
             quadruple = txt.readlines()
 
     return quadruple
@@ -156,7 +161,7 @@ def json2natural(history):
 if __name__ == "__main__":
     args = parse_args()
     set_seed(args.seed)
-    with open(args.dataset, 'r') as f:
+    with open(args.dataset, 'r', encoding='utf-8') as f:
         dataset = json.load(f)
     samples = dataset[:100]     
     config_list = autogen.config_list_from_json(
@@ -297,8 +302,10 @@ if __name__ == "__main__":
                 })
                 count += 1
 
-    with open(args.save_path, 'w') as f:
-        json.dump(ret, f, indent=4)
+    if args.save_path:
+        os.makedirs(os.path.dirname(os.path.abspath(args.save_path)), exist_ok=True)
+        with open(args.save_path, 'w', encoding='utf-8') as f:
+            json.dump(ret, f, indent=4)
             
             
            
